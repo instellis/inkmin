@@ -8,7 +8,7 @@ Inkmin source code is compatible with [Godot 4.7](https://godotengine.org/downlo
 
 An executable version of the tool can be downloaded from itch.io : [here](https://instellis.itch.io/inkmin)
 
-https://github.com/user-attachments/assets/6e80d2c1-fcfe-4ff4-b450-778c3d14b094
+https://github.com/user-attachments/assets/fec859ae-8b18-4852-ba9b-29687b0e698a
 
 ## How it works
 
