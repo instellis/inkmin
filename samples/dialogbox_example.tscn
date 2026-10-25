@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://6ft1lhxh1pa5"]
+
+[ext_resource type="Script" uid="uid://bkttwhh3y6kwp" path="res://samples/dialogbox_example.gd" id="1_ontmw"]
+[ext_resource type="Script" uid="uid://bs537r852mteg" path="res://samples/inkminreader.gd" id="2_eucji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohi8j"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.47657818, 0.47657818, 0.47657806, 1)
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="Theme" id="Theme_ohi8j"]
+default_font_size = 30
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ohi8j")
+RichTextLabel/font_sizes/normal_font_size = 30
+
+[node name="DialogUI" type="Control" unique_id=1839902504]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ohi8j")
+script = ExtResource("1_ontmw")
+
+[node name="inkminreader" type="Control" parent="." unique_id=1718734073]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_eucji")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=740241430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer" unique_id=173996907]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=819321692]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="dialogtext" type="RichTextLabel" parent="CenterContainer/Panel/VBox" unique_id=703544606]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="LinebreakRow" type="HBoxContainer" parent="CenterContainer/Panel/VBox" unique_id=1223922507]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="CenterContainer/Panel/VBox/LinebreakRow" unique_id=226458719]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LinebreakButton" type="Button" parent="CenterContainer/Panel/VBox/LinebreakRow" unique_id=1883854322]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+text = ">>"
+alignment = 2
+
+[node name="choices" type="VBoxContainer" parent="CenterContainer/Panel/VBox" unique_id=1910428464]
+unique_name_in_owner = true
+layout_mode = 2

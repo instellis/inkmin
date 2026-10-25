@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bioe2hca1t7xs"]
+
+[ext_resource type="Script" uid="uid://88mr4g0rj4ck" path="res://inkmin/languagemanager.gd" id="1_24wiv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3btpq"]
+bg_color = Color(0.877616, 0.877616, 0.877616, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yjtx"]
+bg_color = Color(0.877616, 0.877616, 0.877616, 1)
+
+[node name="Languagemanager" type="CenterContainer" unique_id=1808465770]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+script = ExtResource("1_24wiv")
+
+[node name="Panel" type="Panel" parent="." unique_id=506085811]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="Panel" unique_id=1634529494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margins" unique_id=405528949]
+layout_mode = 2
+
+[node name="Topmenu" type="HBoxContainer" parent="Panel/Margins/VBox" unique_id=1736990146]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/Margins/VBox/Topmenu" unique_id=1806912705]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9882218, 0.9882218, 0.9882218, 1)
+text = "Translation Manager"
+
+[node name="exportcsv" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=1842793380]
+layout_mode = 2
+text = "Export TSV
+"
+
+[node name="checkcsv" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=860132658]
+layout_mode = 2
+text = "Check TSV
+"
+
+[node name="importcsv" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=440657426]
+layout_mode = 2
+text = "Inject TSV"
+
+[node name="spacer" type="Control" parent="Panel/Margins/VBox/Topmenu" unique_id=1776797292]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Clearlog" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=861165889]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Clear log"
+
+[node name="Closebutton" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=655275916]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Margins/VBox" unique_id=1185438726]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="translationlog" type="RichTextLabel" parent="Panel/Margins/VBox/ScrollContainer" unique_id=2119202575]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_3btpq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8yjtx")
+bbcode_enabled = true
+
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/exportcsv" to="." method="_on_exportcsv_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/checkcsv" to="." method="_on_checkcsv_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/importcsv" to="." method="_on_injectcsv_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/Clearlog" to="." method="_on_clearlog_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/Closebutton" to="." method="_on_closebutton_pressed"]

@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://blp8ogspf16ac"]
+
+[ext_resource type="Script" uid="uid://cms3gao8agod" path="res://scenariocreator/eventscreator.gd" id="1_3ahoc"]
+[ext_resource type="Texture2D" uid="uid://7o3ngf1eb5va" path="res://inkmin/logo-inkmin.png" id="1_ogjls"]
+[ext_resource type="Theme" uid="uid://7nptu466mjx" path="res://scenariocreator/singlenode.theme" id="3_2dvmt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qtvm"]
+bg_color = Color(0.728822, 0.728822, 0.728822, 1)
+
+[node name="Eventscreator" type="Panel" unique_id=1584829186]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ahoc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1118037837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="topmenu" type="MarginContainer" parent="VBoxContainer" unique_id=1925327670]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = -1
+
+[node name="Margins" type="MarginContainer" parent="VBoxContainer/topmenu" unique_id=2013531708]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="topmenu" type="HBoxContainer" parent="VBoxContainer/topmenu/Margins" unique_id=1864475892]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="logo" type="TextureRect" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1083317445]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_ogjls")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="title" type="Label" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1841222003]
+layout_mode = 2
+text = "Scenario creator"
+
+[node name="cutscene" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1811539944]
+layout_mode = 2
+text = "cutscene
+"
+
+[node name="event" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=381561320]
+layout_mode = 2
+text = "scenario event
+"
+
+[node name="dialog" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1217842163]
+layout_mode = 2
+text = "dialog"
+
+[node name="tech" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=924566754]
+layout_mode = 2
+text = "unlock tech"
+
+[node name="spacer" type="Control" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1893086092]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="create_node" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1572274301]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "create node"
+
+[node name="create_group" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=687145221]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "create group"
+
+[node name="erase_node" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1228422554]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "erase node"
+
+[node name="spacer2" type="Control" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=43345271]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="load" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1620998431]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "load"
+
+[node name="save" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1263672556]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "save"
+
+[node name="close" type="Button" parent="VBoxContainer/topmenu/Margins/topmenu" unique_id=1053034482]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "dialogs"
+
+[node name="spacer" type="Control" parent="VBoxContainer" unique_id=1287945371]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="thecanvas" type="GraphEdit" parent="VBoxContainer" unique_id=1504816877]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/grid_major = Color(0.633757, 0.633757, 0.633757, 1)
+theme_override_colors/grid_minor = Color(0.74558, 0.74558, 0.74558, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qtvm")
+right_disconnects = true
+minimap_enabled = false
+show_menu = false
+show_zoom_buttons = false
+show_grid_buttons = false
+show_minimap_button = false
+show_arrange_button = false
+
+[node name="GraphNodeModel" type="GraphNode" parent="." unique_id=72414311]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 250.0
+offset_right = 600.0
+offset_bottom = 650.0
+mouse_filter = 1
+theme = ExtResource("3_2dvmt")
+position_offset = Vector2(100, 100)
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+
+[node name="Control" type="Label" parent="GraphNodeModel" unique_id=1615466486]
+layout_mode = 2
+text = "label"
+
+[node name="Control2" type="LineEdit" parent="GraphNodeModel" unique_id=284597509]
+layout_mode = 2
+text = "linedit"
+
+[node name="Control3" type="TextEdit" parent="GraphNodeModel" unique_id=412262983]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "textedit"
+
+[node name="thefiledialog" type="FileDialog" parent="." unique_id=1269017008]
+unique_name_in_owner = true
+auto_translate_mode = 1
+title = "Open a File"
+position = Vector2i(250, 150)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="create_node_popup" type="ConfirmationDialog" parent="." unique_id=1552906219]
+unique_name_in_owner = true
+title = "Create node type"
+position = Vector2i(510, 240)
+size = Vector2i(500, 360)
+ok_button_text = "Create"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="create_node_popup" unique_id=1773986669]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 311.0
+theme_override_constants/separation = 10
+
+[node name="name_label" type="Label" parent="create_node_popup/VBoxContainer" unique_id=295051297]
+layout_mode = 2
+text = "Name"
+
+[node name="new_node_name" type="LineEdit" parent="create_node_popup/VBoxContainer" unique_id=1719069244]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "node name"
+
+[node name="new_node_has_condition" type="CheckBox" parent="create_node_popup/VBoxContainer" unique_id=1431340912]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add condition"
+
+[node name="erase_node_popup" type="ConfirmationDialog" parent="." unique_id=1529743076]
+unique_name_in_owner = true
+title = "Erase node type"
+position = Vector2i(560, 280)
+size = Vector2i(400, 180)
+ok_button_text = "Erase"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="erase_node_popup" unique_id=1869339940]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 131.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="erase_node_popup/VBoxContainer" unique_id=1881779061]
+layout_mode = 2
+text = "Node type"
+
+[node name="erase_node_type" type="OptionButton" parent="erase_node_popup/VBoxContainer" unique_id=210238996]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="erase_node_warning" type="AcceptDialog" parent="." unique_id=150305338]
+unique_name_in_owner = true
+title = "Warning"
+position = Vector2i(540, 300)
+size = Vector2i(440, 140)
+dialog_text = "Careful, you are using this node type in your project"
+
+[node name="rename_node_popup" type="ConfirmationDialog" parent="." unique_id=577830651]
+unique_name_in_owner = true
+title = "Rename node type"
+position = Vector2i(560, 280)
+size = Vector2i(420, 170)
+ok_button_text = "Rename"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="rename_node_popup" unique_id=1442501753]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 412.0
+offset_bottom = 121.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="rename_node_popup/VBoxContainer" unique_id=1094807497]
+layout_mode = 2
+text = "New node type name"
+
+[node name="rename_node_name" type="LineEdit" parent="rename_node_popup/VBoxContainer" unique_id=444465626]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "node name"
+
+[connection signal="pressed" from="VBoxContainer/topmenu/Margins/topmenu/load" to="." method="loadeventfile"]
+[connection signal="pressed" from="VBoxContainer/topmenu/Margins/topmenu/save" to="." method="saveeventfile"]
+[connection signal="pressed" from="VBoxContainer/topmenu/Margins/topmenu/close" to="." method="_on_close_pressed"]
+[connection signal="file_selected" from="thefiledialog" to="." method="_on_filedialog_file_selected"]
+[connection signal="confirmed" from="create_node_popup" to="." method="createnodetype"]
+[connection signal="confirmed" from="erase_node_popup" to="." method="erasenodetype"]
+[connection signal="confirmed" from="rename_node_popup" to="." method="renamenodetype"]

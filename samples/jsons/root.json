@@ -1,0 +1,31 @@
+{
+	"4686-4172-8bb1-a795": {
+		"choicerank": 0.0,
+		"destination": "frontdoor",
+		"inkline": 4.0,
+		"type": "goto"
+	},
+	"root": {
+		"choicerank": 0.0,
+		"groups": [],
+		"inkline": 1.0,
+		"knots": [
+			"root",
+			"frontdoor",
+			"corridor",
+			"bluedoor"
+		],
+		"languages": [
+			"en",
+			"fr"
+		],
+		"next": "4686-4172-8bb1-a795",
+		"type": "root",
+		"variables": [
+			{
+				"content": false,
+				"name": "haskey"
+			}
+		]
+	}
+}

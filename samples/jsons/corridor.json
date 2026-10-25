@@ -1,0 +1,175 @@
+{
+	"0f61-4d8d-a639-a8da": {
+		"choicerank": 0,
+		"inkline": 17,
+		"next": "f75a-4212-91fc-c294",
+		"text": {
+			"en": "",
+			"fr": ""
+		},
+		"type": "weave"
+	},
+	"140c-4114-9fbd-c9ff": {
+		"choicerank": 1,
+		"destination": "frontdoor",
+		"inkline": 10,
+		"next": "0f61-4d8d-a639-a8da",
+		"type": "goto"
+	},
+	"1990-401f-a681-a82a": {
+		"choicerank": 0,
+		"inkline": 2,
+		"next": "f17d-45a5-8540-d11a",
+		"text": {
+			"en": "You are standing in a dark corridor. A box is placed on a small table in front of you. The front door is behind you. There is a blue door in front of you.",
+			"fr": "Vous êtes dans un couloir sombre. Une boîte est posée sur une petite table devant vous. La porte d'entrée est derrière vous. Une porte bleue se trouve face à vous."
+		},
+		"type": "text"
+	},
+	"5573-4b91-beef-0c02": {
+		"choicerank": 1,
+		"inkline": 14,
+		"next": "674a-4f5f-b44c-6ddc",
+		"text": {
+			"en": "take the key",
+			"fr": "prendre la clé"
+		},
+		"type": "choice"
+	},
+	"5e5b-40a6-b1fc-e18c": {
+		"choicerank": 0,
+		"inkline": 13,
+		"next": "5573-4b91-beef-0c02",
+		"text": {
+			"en": "In the box there is a key.",
+			"fr": "Il y a une clé dans la boîte."
+		},
+		"type": "text"
+	},
+	"674a-4f5f-b44c-6ddc": {
+		"choicerank": 1,
+		"inkline": 15,
+		"instruction": "haskey=true",
+		"next": "0f61-4d8d-a639-a8da",
+		"type": "execute"
+	},
+	"6b06-489f-a5c1-ec4a": {
+		"choicerank": 1,
+		"inkline": 7,
+		"next": "8c25-4678-9c59-9176",
+		"text": {
+			"en": "open the box",
+			"fr": "ouvrir la boîte"
+		},
+		"type": "choice"
+	},
+	"8a62-4996-9bf9-6ab3": {
+		"choicerank": 1,
+		"inkline": 9,
+		"next": "140c-4114-9fbd-c9ff",
+		"text": {
+			"en": "open the front door",
+			"fr": "ouvrir la porte d'entrée"
+		},
+		"type": "choice"
+	},
+	"8c25-4678-9c59-9176": {
+		"choicerank": 1,
+		"destination": "openbox",
+		"inkline": 8,
+		"next": "0f61-4d8d-a639-a8da",
+		"type": "goto"
+	},
+	"9e4e-4b9a-b1e4-4670": {
+		"choicerank": 1,
+		"inkline": 16,
+		"next": "0f61-4d8d-a639-a8da",
+		"text": {
+			"en": "leave the key",
+			"fr": "laisser la clé"
+		},
+		"type": "choice"
+	},
+	"ae10-422a-ad69-23de": {
+		"choicerank": 0,
+		"inkline": 20,
+		"next": "d78a-40f1-a7e0-0dc8",
+		"text": {
+			"en": "There is no more key in the box.",
+			"fr": "Il n'y a plus de clé dans la boîte."
+		},
+		"type": "text"
+	},
+	"c1e2-4e30-84a7-eaa0": {
+		"choicerank": 0,
+		"inkline": 19,
+		"name": "keytaken",
+		"next": "ae10-422a-ad69-23de",
+		"type": "stitch"
+	},
+	"d0b4-4b95-aa9f-5e8c": {
+		"choicerank": 0,
+		"condition": "haskey=true",
+		"consequences": [
+			"->keytaken"
+		],
+		"inkline": 12,
+		"next": "5e5b-40a6-b1fc-e18c",
+		"type": "condition"
+	},
+	"d78a-40f1-a7e0-0dc8": {
+		"choicerank": 1,
+		"inkline": 21,
+		"next": "fb53-4aff-9d5b-cd6a",
+		"text": {
+			"en": "OK",
+			"fr": "D'accord"
+		},
+		"type": "choice"
+	},
+	"e6eb-44c1-b4a9-60b4": {
+		"choicerank": 0,
+		"inkline": 11,
+		"name": "openbox",
+		"next": "d0b4-4b95-aa9f-5e8c",
+		"type": "stitch"
+	},
+	"f17d-45a5-8540-d11a": {
+		"choicerank": 0,
+		"condition": "haskey=true",
+		"consequences": [
+			{
+				"consequences": [
+					"-> bluedoor"
+				],
+				"text": {
+					"en": "open the blue door with the key",
+					"fr": "ouvrir la porte bleue avec la clé"
+				},
+				"type": "choice"
+			}
+		],
+		"inkline": 3,
+		"next": "6b06-489f-a5c1-ec4a",
+		"type": "condition"
+	},
+	"f75a-4212-91fc-c294": {
+		"choicerank": 0,
+		"destination": "corridor",
+		"inkline": 18,
+		"next": "",
+		"type": "goto"
+	},
+	"fb53-4aff-9d5b-cd6a": {
+		"choicerank": 1,
+		"destination": "corridor",
+		"inkline": 22,
+		"type": "goto"
+	},
+	"root": {
+		"choicerank": 0,
+		"inkline": 1,
+		"next": "1990-401f-a681-a82a",
+		"type": "root"
+	}
+}

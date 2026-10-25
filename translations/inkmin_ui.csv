@@ -1,0 +1,113 @@
+keys,en,fr
+new project,new project,Nouveau projet
+load project,load project,Charger projet
+clear all,clear all,Tout effacer
+Json folder:,Json folder:,Dossier JSON :
+TEST,TEST,TEST
+Main language:,Main language:,Langue principale :
+manage,manage,Gérer
+Scenario creator,Scenario creator,Créateur de scénario
+Ink file:,Ink file:,Fichier Ink :
+import,import,Importer
+export,export,Exporter
+help,help,Aide
+Knots,Knots,Nœuds
+font,font,Police
+new knot,new knot,Nouveau nœud
+new group,new group,Nouveau groupe
+Knot:,Knot:,Nœud :
+clear knot,clear knot,Effacer noeud
+choice,choice,Choix
+weave,weave,Tissage
+codetag,codetag,Instruction
+condition,condition,Condition
+variable,variable,Variable
+go to,go to,Aller à
+save json,save json,Enregistrer le JSON
+Translation mode: use T to replace the current line text.,Translation mode: use T to replace the current line text.,Mode traduction : utilisez T pour remplacer le texte de la ligne actuelle.
+clear console,clear console,Effacer la console
+hide editor,hide editor,Cacher éditeur
+show editor,show editor,Afficher l’éditeur
+hide game,hide game,Cacher jeu
+show game,show game,Afficher le jeu
+linebreaks,linebreaks,Retours à la ligne
+play,play,Jouer
+mouseclick >>>,mouseclick >>>,Clic de souris >>>
+Translations,Translations,Traductions
+Variables,Variables,Variables
+Variable Manager,Variable Manager,Gestionnaire de variables
+replace by:,replace by:,remplacer par :
+OK,OK,OK
+Log:,Log:,Journal :
+Save the current knot before renaming variables.,Save the current knot before renaming variables.,Enregistrez le nœud actuel avant de renommer des variables.
+Careful : currently unsaved knot named %s,Careful : currently unsaved knot named %s,Attention : le nœud nommé %s comporte des modifications non enregistrées
+No variable defined in root knot,No variable defined in root knot,Aucune variable définie dans le nœud racine
+"Use a variable name starting with a letter or underscore, followed by letters, digits or underscores.","Use a variable name starting with a letter or underscore, followed by letters, digits or underscores.","Le nom doit commencer par une lettre ou un trait de soulignement et ne contenir que des lettres, chiffres ou traits de soulignement."
+Variable already declared: %s,Variable already declared: %s,Variable déjà déclarée : %s
+Variable is no longer declared: %s,Variable is no longer declared: %s,Variable qui n’est plus déclarée : %s
+Replaced %s variable by %s,Replaced %s variable by %s,Variable %s remplacée par %s
+unknown variable %s used in knot named %s,unknown variable %s used in knot named %s,variable inconnue %s utilisée dans le nœud nommé %s
+Could not load knot: %s,Could not load knot: %s,Impossible de charger le nœud : %s
+Could not save file: %s,Could not save file: %s,Impossible d’enregistrer le fichier : %s
+Could not restore file; original kept at: %s,Could not restore file; original kept at: %s,Impossible de restaurer le fichier ; original conservé ici : %s
+Translation Manager,Translation Manager,Gestionnaire de traduction
+Export TSV,Export TSV,Exporter le TSV
+Check TSV,Check TSV,Vérifier le TSV
+Inject TSV,Inject TSV,Importer le TSV
+Clear log,Clear log,Effacer le journal
+Add a translation language in the root knot before exporting,Add a translation language in the root knot before exporting,Ajoutez une langue de traduction dans le nœud racine avant d’exporter
+No TSV data to check,No TSV data to check,Aucune donnée TSV à vérifier
+Main language column missing: %s,Main language column missing: %s,Colonne de langue principale manquante : %s
+Missing %s translation at TSV row %d,Missing %s translation at TSV row %d,Traduction %s manquante à la ligne %d du TSV
+Source line missing from TSV for UID %s,Source line missing from TSV for UID %s,Ligne source absente du TSV pour l’UID %s
+Finished checking TSV file. Found %d missing source lines and %d missing translations.,Finished checking TSV file. Found %d missing source lines and %d missing translations.,Vérification du TSV terminée. %d lignes sources manquantes et %d traductions manquantes.
+yes,yes,oui
+no,no,non
+SETTTINGS,SETTTINGS,PARAMÈTRES
+Editor language,Editor language,Langue de l’éditeur
+Editor font size,Editor font size,Taille de police de l’éditeur
+Knot list font size,Knot list font size,Taille de police de la liste des nœuds
+Game preview font size,Game preview font size,Taille de police de l’aperçu du jeu
+Stitch background color,Stitch background color,Couleur de fond des sections
+Codetag text color,Codetag text color,Couleur du texte des instructions
+Goto text color,Goto text color,Couleur du texte des redirections
+Choice tag text color,Choice tag text color,Couleur du texte des balises de choix
+Variable manipulation color,Variable manipulation color,Couleur des modifications de variables
+Open a File,Open a File,Ouvrir un fichier
+Open,Open,Ouvrir
+Save a File,Save a File,Enregistrer un fichier
+select,select,Sélectionner
+save,save,Enregistrer
+load,load,Charger
+check,check,Vérifier
+Cancel,Cancel,Annuler
+Name:,Name:,Nom :
+Enter name here...,Enter name here...,Saisissez le nom ici...
+Color:,Color:,Couleur :
+Change group name,Change group name,Modifier le nom du groupe
+Create a group,Create a group,Créer un groupe
+Replace translation,Replace translation,Remplacer la traduction
+Apply,Apply,Appliquer
+Source (%s):,Source (%s):,Source (%s) :
+Translation (%s):,Translation (%s):,Traduction (%s) :
+cutscene,cutscene,Cinématique
+scenario event,scenario event,Événement de scénario
+dialog,dialog,Dialogue
+unlock tech,unlock tech,Débloquer une technologie
+create node,create node,Créer un nœud
+create group,create group,Créer un groupe
+erase node,erase node,Supprimer un nœud
+dialogs,dialogs,Dialogues
+Create node type,Create node type,Créer un type de nœud
+Create,Create,Créer
+Name,Name,Nom
+node name,node name,Nom du nœud
+Add condition,Add condition,Ajouter une condition
+Erase node type,Erase node type,Supprimer un type de nœud
+Erase,Erase,Supprimer
+Node type,Node type,Type de nœud
+Warning,Warning,Avertissement
+Rename node type,Rename node type,Renommer le type de nœud
+Rename,Rename,Renommer
+New node type name,New node type name,Nouveau nom de type de nœud
+Missing node type: %s,Missing node type: %s,Type de nœud manquant : %s

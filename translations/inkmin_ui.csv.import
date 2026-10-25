@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://crtei7uo6ame7"
+
+[deps]
+
+files=["res://translations/inkmin_ui.en.translation", "res://translations/inkmin_ui.fr.translation"]
+
+source_file="res://translations/inkmin_ui.csv"
+dest_files=["res://translations/inkmin_ui.en.translation", "res://translations/inkmin_ui.fr.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

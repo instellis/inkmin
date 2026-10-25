@@ -1,0 +1,51 @@
+{
+	"191a-409b-ae65-1437": {
+		"choicerank": 1,
+		"inkline": 5,
+		"next": "61e8-4f2a-8e8c-e64f",
+		"text": {
+			"en": "No, I'd rather stay outside",
+			"fr": "Non, je préfère rester dehors"
+		},
+		"type": "choice"
+	},
+	"61e8-4f2a-8e8c-e64f": {
+		"choicerank": 1,
+		"destination": "frontdoor",
+		"inkline": 6,
+		"type": "goto"
+	},
+	"67c4-4c26-8111-bc5c": {
+		"choicerank": 1,
+		"destination": "corridor",
+		"inkline": 4,
+		"next": "",
+		"type": "goto"
+	},
+	"70d3-452b-84be-cf26": {
+		"choicerank": 0,
+		"inkline": 2,
+		"next": "98bb-43bc-9e61-0127",
+		"text": {
+			"en": "You are standing in front of a house, facing a huge dark door. Someone is looking at you through a small window carved in the door and asks: \"Are you sure you want to get in?\"",
+			"fr": "Vous êtes devant une maison, face à une immense porte sombre. Quelqu'un vous observe par une petite fenêtre percée dans la porte et vous demande : « Voulez-vous vraiment entrer ? »"
+		},
+		"type": "text"
+	},
+	"98bb-43bc-9e61-0127": {
+		"choicerank": 1,
+		"inkline": 3,
+		"next": "67c4-4c26-8111-bc5c",
+		"text": {
+			"en": "Yes, let me in",
+			"fr": "Oui, laissez-moi entrer"
+		},
+		"type": "choice"
+	},
+	"root": {
+		"choicerank": 0,
+		"inkline": 1,
+		"next": "70d3-452b-84be-cf26",
+		"type": "root"
+	}
+}

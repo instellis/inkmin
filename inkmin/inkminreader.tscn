@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0untmsv84akv"]
+
+[ext_resource type="Script" uid="uid://q1dg4le1b381" path="res://inkmin/inkminreader.gd" id="1_mksnu"]
+
+[node name="inkminreader" type="Node"]
+script = ExtResource("1_mksnu")

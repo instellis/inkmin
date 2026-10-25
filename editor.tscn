@@ -1,0 +1,1297 @@
+[gd_scene format=3 uid="uid://cs8w7e2svwpn6"]
+
+[ext_resource type="Theme" uid="uid://bldylosy1t5in" path="res://inkmin/editor_theme.tres" id="1_7py46"]
+[ext_resource type="Script" uid="uid://dg5sqb6mnxwus" path="res://editor.gd" id="1_q0a35"]
+[ext_resource type="PackedScene" uid="uid://bgnbirbdukf04" path="res://inkmin/inkminconverter.tscn" id="2_4s0cy"]
+[ext_resource type="PackedScene" uid="uid://c0untmsv84akv" path="res://inkmin/inkminreader.tscn" id="3_1ys5w"]
+[ext_resource type="Texture2D" uid="uid://7o3ngf1eb5va" path="res://inkmin/logo-inkmin.png" id="4_gbsbp"]
+[ext_resource type="PackedScene" uid="uid://blp8ogspf16ac" path="res://scenariocreator/eventscreator.tscn" id="6_gbsbp"]
+[ext_resource type="PackedScene" uid="uid://diudhtnca5d2n" path="res://inkmin/help.tscn" id="6_t27w5"]
+[ext_resource type="PackedScene" uid="uid://bioe2hca1t7xs" path="res://inkmin/languagemanager.tscn" id="7_8yjtx"]
+[ext_resource type="PackedScene" uid="uid://ccsqu2suk8dj3" path="res://inkmin/variablemanager.tscn" id="8_7py46"]
+[ext_resource type="Script" uid="uid://cbqled16lv1co" path="res://inkmin/settings.gd" id="8_8yjtx"]
+[ext_resource type="Script" uid="uid://dwj1k1i6r1x8o" path="res://inkmin/translationview.gd" id="8_translationview"]
+[ext_resource type="Script" uid="uid://dxhfangho8uxi" path="res://inkmin/ui.gd" id="9_ui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0a35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxu6g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2xer"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rv07"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qw4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkts1"]
+bg_color = Color(0.8235294, 0.8235294, 0.8235294, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.20032999, 0.20033002, 0.20032984, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4288"]
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 3.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.129558, 0.129559, 0.129558, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v1c7"]
+bg_color = Color(0.650128, 0.650128, 0.650128, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxsle"]
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0.321728, 0.321728, 0.321728, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qtvm"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.7079665, 0.7079665, 0.7079664, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwc7g"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.720467, 0.720468, 0.720467, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.344076, 0.344076, 0.344075, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wksbx"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nxu6g"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0luj"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_k2xer"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0a35"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmvvn"]
+content_margin_left = 5.0
+
+[node name="Editor" type="Control" unique_id=1618196142]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_7py46")
+script = ExtResource("1_q0a35")
+
+[node name="inkminconverter" parent="." unique_id=1601857745 instance=ExtResource("2_4s0cy")]
+
+[node name="inkminreader" parent="." unique_id=1575987555 instance=ExtResource("3_1ys5w")]
+
+[node name="UI" type="Panel" parent="." unique_id=2078019402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q0a35")
+script = ExtResource("9_ui")
+
+[node name="Mainpanel" type="Panel" parent="UI" unique_id=1292634640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Mainpanel" unique_id=1260470513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer" unique_id=801884126]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="topmenu" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox" unique_id=1526257374]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = -1
+
+[node name="Margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu" unique_id=1825186048]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins" unique_id=45135714]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="logobutton" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1754140986]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nxu6g")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k2xer")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2rv07")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5qw4o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vkts1")
+icon = ExtResource("4_gbsbp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="logo" type="TextureRect" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1770674788]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("4_gbsbp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="new" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=241281540]
+layout_mode = 2
+text = "new project"
+
+[node name="load" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=71138060]
+layout_mode = 2
+text = "load project"
+
+[node name="clearall" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1159829224]
+layout_mode = 2
+text = "clear all"
+
+[node name="folder" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1491169955]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4288")
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/folder" unique_id=1297588476]
+layout_mode = 2
+
+[node name="title" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/folder/HBox" unique_id=479943141]
+layout_mode = 2
+text = "Json folder:"
+
+[node name="folderpath" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/folder/HBox" unique_id=398553855]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_3v1c7")
+clip_text = true
+text_overrun_behavior = 6
+
+[node name="loadfolder" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/folder/HBox" unique_id=360927600]
+layout_mode = 2
+text = " ^ "
+
+[node name="testbutton" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1912272429]
+visible = false
+layout_mode = 2
+text = "TEST"
+
+[node name="spacer1" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1469929120]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Languages" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1090299311]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4288")
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages" unique_id=1584893178]
+layout_mode = 2
+
+[node name="mainlangtitle" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages/HBox" unique_id=542738881]
+layout_mode = 2
+text = "Main language:"
+
+[node name="mainlang" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages/HBox" unique_id=1774606537]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "en"
+
+[node name="langmenu" type="OptionButton" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages/HBox" unique_id=2111837293]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="managelang" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages/HBox" unique_id=883988806]
+layout_mode = 2
+text = "manage"
+
+[node name="spacer2" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=114879094]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="eventscreator" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=504103263]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Scenario creator"
+
+[node name="Inkfile" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1009979165]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4288")
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile" unique_id=1280845399]
+layout_mode = 2
+
+[node name="title" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile/HBox" unique_id=369878475]
+layout_mode = 2
+text = "Ink file:"
+
+[node name="import" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile/HBox" unique_id=1390107254]
+layout_mode = 2
+text = "import"
+
+[node name="export" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile/HBox" unique_id=250300069]
+layout_mode = 2
+text = "export"
+
+[node name="help" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox" unique_id=1772084492]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "help"
+
+[node name="mainzone" type="HSplitContainer" parent="UI/Mainpanel/ScrollContainer/VBox" unique_id=710232613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(193)
+split_offset = 193
+
+[node name="jsonpanel" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone" unique_id=1539624748]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.65
+
+[node name="HBox" type="HSplitContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel" unique_id=515636647]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panelleft" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox" unique_id=610519131]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft" unique_id=1304532822]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins" unique_id=1465698569]
+layout_mode = 2
+
+[node name="knotsmenu" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox" unique_id=604403697]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxsle")
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu" unique_id=1614387028]
+layout_mode = 2
+
+[node name="title" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox" unique_id=2079306699]
+layout_mode = 2
+text = "Knots"
+
+[node name="spacer" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox" unique_id=1541323364]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="fontzoom2" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox" unique_id=1385546866]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qtvm")
+
+[node name="fontzoom" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2" unique_id=1291668829]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2/fontzoom" unique_id=1544590547]
+layout_mode = 2
+text = "font"
+
+[node name="fontzoomminus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2/fontzoom" unique_id=1262882359]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
+
+[node name="fontzoomplus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2/fontzoom" unique_id=765210785]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="newknot" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox" unique_id=1251166062]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "new knot"
+
+[node name="newgroup" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox" unique_id=398983000]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "new group"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox" unique_id=1940481040]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="knotlist" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer" unique_id=764890369]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="model" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist" unique_id=2104707169]
+visible = false
+layout_mode = 2
+
+[node name="knot" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/model" unique_id=2120500054]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "theknot"
+
+[node name="spacer" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/model" unique_id=1655231117]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="up" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/model" unique_id=1524308257]
+layout_mode = 2
+size_flags_horizontal = 8
+text = " ↑ "
+
+[node name="down" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/model" unique_id=1503335148]
+layout_mode = 2
+size_flags_horizontal = 8
+text = " ↓ "
+
+[node name="erase" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/model" unique_id=1078094051]
+layout_mode = 2
+size_flags_horizontal = 8
+text = " x "
+
+[node name="groupmodel" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist" unique_id=851407752]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kwc7g")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel" unique_id=797720825]
+layout_mode = 2
+
+[node name="menu" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox" unique_id=184682212]
+modulate = Color(0.572666, 0.750591, 0.913095, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wksbx")
+
+[node name="VBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu" unique_id=1089421873]
+layout_mode = 2
+
+[node name="groupname" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=240879285]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "group title"
+
+[node name="spacer" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=1788249005]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="up" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=1583317136]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " ↑ "
+
+[node name="down" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=142974903]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " ↓ "
+
+[node name="change" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=189331093]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " C "
+
+[node name="collapse" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=80123319]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " - "
+
+[node name="erase" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox/menu/VBox" unique_id=331093432]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " x "
+
+[node name="knots" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/ScrollContainer/knotlist/groupmodel/VBox" unique_id=1562840889]
+layout_mode = 2
+
+[node name="Panelright" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox" unique_id=562213176]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright" unique_id=1813174392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins" unique_id=129221838]
+layout_mode = 2
+
+[node name="menu" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox" unique_id=1499746257]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, -1)
+layout_mode = 2
+
+[node name="theknot" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=972869782]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4288")
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot" unique_id=276224144]
+layout_mode = 2
+
+[node name="title" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox" unique_id=1366215830]
+layout_mode = 2
+text = "Knot:"
+
+[node name="knotname" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox" unique_id=1085798799]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="changeknot" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox" unique_id=682724489]
+layout_mode = 2
+text = "C"
+
+[node name="clearknot" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox" unique_id=379674318]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "clear knot"
+
+[node name="spacer" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=848986726]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="choice" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=221619023]
+layout_mode = 2
+text = "choice"
+
+[node name="weave" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=923394697]
+layout_mode = 2
+text = "weave"
+
+[node name="codetag" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=121117551]
+layout_mode = 2
+text = "codetag"
+
+[node name="condition" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=1547153242]
+layout_mode = 2
+text = "condition"
+
+[node name="variable" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=1353435823]
+layout_mode = 2
+text = "variable"
+
+[node name="goto" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu" unique_id=23330260]
+layout_mode = 2
+text = "go to"
+
+[node name="textzone" type="ScrollContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox" unique_id=2141928204]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="editorcontent" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone" unique_id=812345678]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="inktext" type="TextEdit" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent" unique_id=1987663713]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/caret_width = 2
+theme_override_constants/line_spacing = 10
+theme_override_constants/wrap_offset = 20
+emoji_menu_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+wrap_mode = 1
+virtual_keyboard_enabled = false
+caret_blink = true
+use_default_word_separators = false
+
+[node name="save" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/inktext" unique_id=2123213847]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 32.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "save json"
+
+[node name="translationview" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent" unique_id=812345679]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+script = ExtResource("8_translationview")
+
+[node name="translationhelp" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/translationview" unique_id=812345680]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Translation mode: use T to replace the current line text."
+autowrap_mode = 3
+
+[node name="translationrows" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/translationview" unique_id=812345681]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="line" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox" unique_id=1893415517]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_nxu6g")
+
+[node name="consolemenu" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox" unique_id=1495684740]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="space" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu" unique_id=763375182]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fontzoom" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu" unique_id=404209705]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qtvm")
+
+[node name="fontzoom" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom" unique_id=286281613]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom/fontzoom" unique_id=816674784]
+layout_mode = 2
+text = "font"
+
+[node name="fontzoomminus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom/fontzoom" unique_id=268101407]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
+
+[node name="fontzoomplus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom/fontzoom" unique_id=1615958836]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="clearwarnings" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu" unique_id=904520430]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "clear console"
+
+[node name="hideeditor" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu" unique_id=2068709950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "hide editor"
+
+[node name="consolezone" type="ScrollContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox" unique_id=1887047729]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="warnings" type="RichTextLabel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolezone" unique_id=144737711]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.665604, 8.0619e-07, 4.33177e-07, 1)
+bbcode_enabled = true
+
+[node name="gameview" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone" unique_id=1051004520]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview" unique_id=1573352994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins" unique_id=661043025]
+layout_mode = 2
+
+[node name="gamemenu" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox" unique_id=1261967899]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+alignment = 2
+
+[node name="hideshow" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu" unique_id=542268028]
+unique_name_in_owner = true
+layout_mode = 2
+text = "hide game"
+
+[node name="Control" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu" unique_id=1605520673]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fontzoom3" type="PanelContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu" unique_id=1795473447]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qtvm")
+
+[node name="fontzoom" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3" unique_id=1257713225]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3/fontzoom" unique_id=1198844804]
+layout_mode = 2
+text = "font"
+
+[node name="fontzoomminus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3/fontzoom" unique_id=1841270009]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
+
+[node name="fontzoomplus" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3/fontzoom" unique_id=1306016585]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="linebreak" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu" unique_id=1388493374]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "linebreaks"
+
+[node name="Play" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu" unique_id=1499205338]
+layout_mode = 2
+text = "play"
+
+[node name="game" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox" unique_id=293740717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game" unique_id=912789716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins" unique_id=489894712]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="gamedisplay" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins/ScrollContainer" unique_id=1002761081]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="textmodel" type="RichTextLabel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins/ScrollContainer/gamedisplay" unique_id=789596670]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0luj")
+bbcode_enabled = true
+fit_content = true
+justification_flags = 171
+
+[node name="buttonmodel" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins/ScrollContainer/gamedisplay" unique_id=1767821855]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="OKmodel" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins/ScrollContainer/gamedisplay" unique_id=536504022]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "mouseclick >>>"
+
+[node name="Variables" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox" unique_id=2117122372]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables" unique_id=1752038248]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins" unique_id=1631794513]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox" unique_id=131444357]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/HBox" unique_id=1633453988]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Variables"
+
+[node name="spacer" type="Control" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/HBox" unique_id=654595639]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="varmanage" type="Button" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/HBox" unique_id=1197042112]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "manage"
+
+[node name="Separator" type="Panel" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox" unique_id=1856915718]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_k2xer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox" unique_id=998417768]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="varbox" type="GridContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/ScrollContainer" unique_id=10481924]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="model" type="HBoxContainer" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/ScrollContainer/varbox" unique_id=916724084]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="name" type="Label" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/ScrollContainer/varbox/model" unique_id=2097122165]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0a35")
+
+[node name="content" type="LineEdit" parent="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/ScrollContainer/varbox/model" unique_id=412663273]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.0664776, 0.062844, 0.368688, 1)
+
+[node name="Languagemanager" parent="UI" unique_id=1808465770 instance=ExtResource("7_8yjtx")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Variablemanager" parent="UI" unique_id=1780509150 instance=ExtResource("8_7py46")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Popup" type="CenterContainer" parent="UI" unique_id=968564139]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+
+[node name="Panel" type="Panel" parent="UI/Popup" unique_id=92366222]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="UI/Popup/Panel" unique_id=1758164488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="UI/Popup/Panel/Margins" unique_id=1710802202]
+layout_mode = 2
+
+[node name="popupmessage" type="Label" parent="UI/Popup/Panel/Margins/VBox" unique_id=607230236]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="lineedit" type="LineEdit" parent="UI/Popup/Panel/Margins/VBox" unique_id=897653174]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_length = 40
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+caret_blink = true
+
+[node name="yesorno" type="HBoxContainer" parent="UI/Popup/Panel/Margins/VBox" unique_id=805451860]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="yes" type="Button" parent="UI/Popup/Panel/Margins/VBox/yesorno" unique_id=1097585593]
+unique_name_in_owner = true
+layout_mode = 2
+text = "yes"
+
+[node name="no" type="Button" parent="UI/Popup/Panel/Margins/VBox/yesorno" unique_id=1404286722]
+unique_name_in_owner = true
+layout_mode = 2
+text = "no"
+
+[node name="Button" type="Button" parent="UI/Popup/Panel" unique_id=534888824]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 26.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "x"
+
+[node name="Settings" type="CenterContainer" parent="UI" unique_id=2090704322]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+script = ExtResource("8_8yjtx")
+
+[node name="Panel" type="Panel" parent="UI/Settings" unique_id=1401775138]
+custom_minimum_size = Vector2(600, 480)
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="UI/Settings/Panel" unique_id=1715981490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/Settings/Panel/Margins" unique_id=573051694]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="titlebar" type="Label" parent="UI/Settings/Panel/Margins/VBox" unique_id=1397027974]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_lmvvn")
+text = "SETTTINGS"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="closebutton" type="Button" parent="UI/Settings/Panel/Margins/VBox/titlebar" unique_id=1661565169]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "x"
+
+[node name="EditorLanguageRow" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=452014017]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/EditorLanguageRow" unique_id=1793996355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Editor language"
+
+[node name="EditorLanguage" type="OptionButton" parent="UI/Settings/Panel/Margins/VBox/EditorLanguageRow" unique_id=1847655596]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="EditorFontSize" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=221432843]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/EditorFontSize" unique_id=566766253]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Editor font size"
+
+[node name="Decrease" type="Button" parent="UI/Settings/Panel/Margins/VBox/EditorFontSize" unique_id=2080295216]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "-"
+
+[node name="Value" type="Label" parent="UI/Settings/Panel/Margins/VBox/EditorFontSize" unique_id=1884467345]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Increase" type="Button" parent="UI/Settings/Panel/Margins/VBox/EditorFontSize" unique_id=486050070]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "+"
+
+[node name="KnotListFontSize" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=1418623149]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/KnotListFontSize" unique_id=1143553858]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Knot list font size"
+
+[node name="Decrease" type="Button" parent="UI/Settings/Panel/Margins/VBox/KnotListFontSize" unique_id=1209195453]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "-"
+
+[node name="Value" type="Label" parent="UI/Settings/Panel/Margins/VBox/KnotListFontSize" unique_id=577020057]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Increase" type="Button" parent="UI/Settings/Panel/Margins/VBox/KnotListFontSize" unique_id=1062236019]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "+"
+
+[node name="GameFontSize" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=1557880853]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/GameFontSize" unique_id=164855991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Game preview font size"
+
+[node name="Decrease" type="Button" parent="UI/Settings/Panel/Margins/VBox/GameFontSize" unique_id=1813639275]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "-"
+
+[node name="Value" type="Label" parent="UI/Settings/Panel/Margins/VBox/GameFontSize" unique_id=1643809650]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Increase" type="Button" parent="UI/Settings/Panel/Margins/VBox/GameFontSize" unique_id=1932861049]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "+"
+
+[node name="StitchColor" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=1918494366]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/StitchColor" unique_id=1546528271]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Stitch background color"
+
+[node name="Color" type="ColorPickerButton" parent="UI/Settings/Panel/Margins/VBox/StitchColor" unique_id=524741603]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+
+[node name="CodetagColor" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=1440920000]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/CodetagColor" unique_id=1338952963]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Codetag text color"
+
+[node name="Color" type="ColorPickerButton" parent="UI/Settings/Panel/Margins/VBox/CodetagColor" unique_id=1708754158]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+edit_alpha = false
+
+[node name="GotoColor" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=8186269]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/GotoColor" unique_id=2131002066]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Goto text color"
+
+[node name="Color" type="ColorPickerButton" parent="UI/Settings/Panel/Margins/VBox/GotoColor" unique_id=560653356]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+edit_alpha = false
+
+[node name="ChoiceColor" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=916043501]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/ChoiceColor" unique_id=792411907]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Choice tag text color"
+
+[node name="Color" type="ColorPickerButton" parent="UI/Settings/Panel/Margins/VBox/ChoiceColor" unique_id=806240247]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+edit_alpha = false
+
+[node name="VariableColor" type="HBoxContainer" parent="UI/Settings/Panel/Margins/VBox" unique_id=337477303]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Margins/VBox/VariableColor" unique_id=721467771]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "Variable manipulation color"
+
+[node name="Color" type="ColorPickerButton" parent="UI/Settings/Panel/Margins/VBox/VariableColor" unique_id=799324037]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+edit_alpha = false
+
+[node name="filedialog" type="FileDialog" parent="UI" unique_id=1476185284]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(250, 150)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="help_popup" parent="UI" unique_id=1158300501 instance=ExtResource("6_t27w5")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Eventscreator" parent="UI" unique_id=376628451 instance=ExtResource("6_gbsbp")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/logobutton" to="." method="logobutton_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/new" to="." method="_on_newproject_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/load" to="." method="loadjsons"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/clearall" to="." method="clearall"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/folder/HBox/loadfolder" to="." method="choosedir"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/testbutton" to="." method="tests"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Languages/HBox/managelang" to="." method="_on_managelang_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/eventscreator" to="." method="_on_eventscreator_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile/HBox/import" to="." method="_on_convert_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/Inkfile/HBox/export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/topmenu/Margins/HBox/help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2/fontzoom/fontzoomminus" to="UI" method="knotlistfontzoom" binds= ["-"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/fontzoom2/fontzoom/fontzoomplus" to="UI" method="knotlistfontzoom" binds= ["+"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/newknot" to="." method="_on_newknot_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelleft/margins/VBox/knotsmenu/HBox/newgroup" to="." method="_on_newgroup_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox/changeknot" to="." method="_on_knotchange_clicked"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/theknot/HBox/clearknot" to="." method="clearknot_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/choice" to="." method="_on_tags_pressed" binds= ["choice"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/weave" to="." method="_on_tags_pressed" binds= ["weave"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/codetag" to="." method="_on_tags_pressed" binds= ["codetag"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/condition" to="." method="_on_tags_pressed" binds= ["condition"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/variable" to="." method="_on_tags_pressed" binds= ["variable"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/menu/goto" to="." method="_on_tags_pressed" binds= ["goto"]]
+[connection signal="gui_input" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/inktext" to="." method="_on_editor_gui_input"]
+[connection signal="text_changed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/inktext" to="." method="_on_inktext_text_changed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/textzone/editorcontent/inktext/save" to="." method="savejson"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom/fontzoom/fontzoomminus" to="UI" method="fontzoom" binds= ["-"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/fontzoom/fontzoom/fontzoomplus" to="UI" method="fontzoom" binds= ["+"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/jsonpanel/HBox/Panelright/margins/VBox/consolemenu/clearwarnings" to="." method="clear_warningbox"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3/fontzoom/fontzoomminus" to="UI" method="gamefontzoom" binds= ["-"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/fontzoom3/fontzoom/fontzoomplus" to="UI" method="gamefontzoom" binds= ["+"]]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/linebreak" to="." method="_on_linebreak_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/gamemenu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/game/Margins/ScrollContainer/gamedisplay/OKmodel" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="UI/Mainpanel/ScrollContainer/VBox/mainzone/gameview/margins/VBox/Variables/Margins/VBox/HBox/varmanage" to="UI/Variablemanager" method="openmanager"]
+[connection signal="pressed" from="UI/Popup/Panel/Margins/VBox/yesorno/yes" to="." method="yesnopopup" binds= ["yes"]]
+[connection signal="pressed" from="UI/Popup/Panel/Margins/VBox/yesorno/no" to="." method="yesnopopup" binds= ["no"]]
+[connection signal="pressed" from="UI/Popup/Panel/Button" to="." method="close_popup"]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/titlebar/closebutton" to="UI/Settings" method="close_pressed"]
+[connection signal="item_selected" from="UI/Settings/Panel/Margins/VBox/EditorLanguageRow/EditorLanguage" to="UI/Settings" method="_on_editor_language_item_selected"]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/EditorFontSize/Decrease" to="UI/Settings" method="_on_editor_font_size_pressed" binds= ["-"]]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/EditorFontSize/Increase" to="UI/Settings" method="_on_editor_font_size_pressed" binds= ["+"]]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/KnotListFontSize/Decrease" to="UI/Settings" method="_on_knot_list_font_size_pressed" binds= ["-"]]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/KnotListFontSize/Increase" to="UI/Settings" method="_on_knot_list_font_size_pressed" binds= ["+"]]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/GameFontSize/Decrease" to="UI/Settings" method="_on_game_font_size_pressed" binds= ["-"]]
+[connection signal="pressed" from="UI/Settings/Panel/Margins/VBox/GameFontSize/Increase" to="UI/Settings" method="_on_game_font_size_pressed" binds= ["+"]]
+[connection signal="color_changed" from="UI/Settings/Panel/Margins/VBox/StitchColor/Color" to="UI/Settings" method="_on_highlight_color_changed" binds= [&"stitch_color"]]
+[connection signal="color_changed" from="UI/Settings/Panel/Margins/VBox/CodetagColor/Color" to="UI/Settings" method="_on_highlight_color_changed" binds= [&"codetag_color"]]
+[connection signal="color_changed" from="UI/Settings/Panel/Margins/VBox/GotoColor/Color" to="UI/Settings" method="_on_highlight_color_changed" binds= [&"goto_color"]]
+[connection signal="color_changed" from="UI/Settings/Panel/Margins/VBox/ChoiceColor/Color" to="UI/Settings" method="_on_highlight_color_changed" binds= [&"choice_color"]]
+[connection signal="color_changed" from="UI/Settings/Panel/Margins/VBox/VariableColor/Color" to="UI/Settings" method="_on_highlight_color_changed" binds= [&"variable_color"]]
+[connection signal="dir_selected" from="UI/filedialog" to="." method="_on_filedialog_file_selected"]
+[connection signal="file_selected" from="UI/filedialog" to="." method="_on_filedialog_file_selected"]

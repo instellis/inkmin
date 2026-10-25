@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://diudhtnca5d2n"]
+
+[ext_resource type="Script" uid="uid://22uu2ca5cg2q" path="res://help/help.gd" id="1_w1kg0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp0th"]
+bg_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+border_color = Color(0.26050615, 0.26050615, 0.26050597, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esu1a"]
+content_margin_left = 8.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 3.0
+bg_color = Color(0.5211406, 0.52114064, 0.52114046, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biie3"]
+content_margin_left = 8.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 3.0
+bg_color = Color(0.4609949, 0.4609949, 0.46099472, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k315s"]
+bg_color = Color(0.7553861, 0.7553861, 0.7553859, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_k315s"]
+RichTextLabel/colors/default_color = Color(0.15247649, 0.15247649, 0.15247646, 1)
+TabContainer/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_selected_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_unselected_color = Color(0.79482806, 0.794828, 0.794828, 1)
+TabContainer/styles/panel = SubResource("StyleBoxFlat_vp0th")
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_esu1a")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_esu1a")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_esu1a")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_biie3")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_k315s")
+
+[node name="Help_popup" type="AcceptDialog" unique_id=1158300501]
+oversampling_override = 1.0
+title = "Editor help"
+initial_position = 1
+size = Vector2i(1500, 900)
+visible = true
+min_size = Vector2i(900, 600)
+ok_button_text = "close"
+script = ExtResource("1_w1kg0")
+
+[node name="Margins" type="MarginContainer" parent="." unique_id=1460314745]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1492.0
+offset_bottom = 851.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 5
+
+[node name="Tabs" type="TabContainer" parent="Margins" unique_id=1412778878]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_k315s")

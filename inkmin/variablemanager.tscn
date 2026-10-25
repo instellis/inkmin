@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ccsqu2suk8dj3"]
+
+[ext_resource type="Script" uid="uid://dni7v6xk0vkjt" path="res://inkmin/variablemanager.gd" id="1_eyt1r"]
+[ext_resource type="Theme" uid="uid://bldylosy1t5in" path="res://inkmin/editor_theme.tres" id="1_pvfe0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg70p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxu6g"]
+bg_color = Color(0.55828667, 0.55828667, 0.5582864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xav6t"]
+bg_color = Color(0.7385896, 0.73858964, 0.73858947, 1)
+
+[node name="Variablemanager" type="CenterContainer" unique_id=1780509150]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+theme = ExtResource("1_pvfe0")
+script = ExtResource("1_eyt1r")
+
+[node name="Panel" type="Panel" parent="." unique_id=1912505767]
+custom_minimum_size = Vector2(1000, 800)
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="Panel" unique_id=1351903181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margins" unique_id=771310412]
+layout_mode = 2
+
+[node name="Topmenu" type="HBoxContainer" parent="Panel/Margins/VBox" unique_id=122837159]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/Margins/VBox/Topmenu" unique_id=1754521256]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+text = "Variable Manager"
+
+[node name="Closebutton" type="Button" parent="Panel/Margins/VBox/Topmenu" unique_id=784303697]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "X"
+
+[node name="Variables" type="ScrollContainer" parent="Panel/Margins/VBox" unique_id=834152550]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/Margins/VBox/Variables" unique_id=2002346336]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg70p")
+
+[node name="variablelist" type="VBoxContainer" parent="Panel/Margins/VBox/Variables/PanelContainer" unique_id=541972844]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="varmodel" type="HBoxContainer" parent="Panel/Margins/VBox/Variables/PanelContainer" unique_id=1228504599]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="varname" type="Label" parent="Panel/Margins/VBox/Variables/PanelContainer/varmodel" unique_id=1538021173]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07815645, 0.078156464, 0.078156434, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nxu6g")
+
+[node name="replaced" type="Label" parent="Panel/Margins/VBox/Variables/PanelContainer/varmodel" unique_id=1964968893]
+layout_mode = 2
+text = "replace by:"
+
+[node name="newvar" type="LineEdit" parent="Panel/Margins/VBox/Variables/PanelContainer/varmodel" unique_id=68065640]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="confirm" type="Button" parent="Panel/Margins/VBox/Variables/PanelContainer/varmodel" unique_id=1091023823]
+layout_mode = 2
+text = "OK"
+
+[node name="logmenu" type="HBoxContainer" parent="Panel/Margins/VBox" unique_id=1070675887]
+layout_mode = 2
+
+[node name="title" type="Label" parent="Panel/Margins/VBox/logmenu" unique_id=250858087]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Log:"
+
+[node name="spacer" type="Control" parent="Panel/Margins/VBox/logmenu" unique_id=954504142]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="clearlog" type="Button" parent="Panel/Margins/VBox/logmenu" unique_id=46791387]
+layout_mode = 2
+text = "clear console"
+
+[node name="Errors" type="ScrollContainer" parent="Panel/Margins/VBox" unique_id=1489303706]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/Margins/VBox/Errors" unique_id=1206802203]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="variableerrors" type="RichTextLabel" parent="Panel/Margins/VBox/Errors/PanelContainer" unique_id=626318461]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xav6t")
+fit_content = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/Margins/VBox/Topmenu/Closebutton" to="." method="_on_closebutton_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBox/logmenu/clearlog" to="Panel/Margins/VBox/Errors/PanelContainer/variableerrors" method="clear"]

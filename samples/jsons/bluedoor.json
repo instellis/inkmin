@@ -1,0 +1,58 @@
+{
+	"596e-4864-908d-0400": {
+		"choicerank": 1,
+		"inkline": 6,
+		"instruction": "haskey=false",
+		"next": "6545-4de2-b9b1-3eaf",
+		"type": "execute"
+	},
+	"6545-4de2-b9b1-3eaf": {
+		"choicerank": 1,
+		"destination": "frontdoor",
+		"inkline": 7,
+		"type": "goto"
+	},
+	"724e-4836-8133-230d": {
+		"choicerank": 0,
+		"inkline": 3,
+		"next": "95c3-42ff-919f-8e67",
+		"text": {
+			"en": "You close your eyes and open them again.",
+			"fr": "Vous fermez les yeux, puis les rouvrez."
+		},
+		"type": "text"
+	},
+	"95c3-42ff-919f-8e67": {
+		"choicerank": 1,
+		"inkline": 4,
+		"next": "9846-48aa-a403-5dd7",
+		"text": {
+			"en": "OK",
+			"fr": "D'accord"
+		},
+		"type": "choice"
+	},
+	"9846-48aa-a403-5dd7": {
+		"choicerank": 1,
+		"comtext": "reset and go back to start",
+		"inkline": 5,
+		"next": "596e-4864-908d-0400",
+		"type": "comment"
+	},
+	"eb8f-4943-9519-3a09": {
+		"choicerank": 0,
+		"inkline": 2,
+		"next": "724e-4836-8133-230d",
+		"text": {
+			"en": "You open the blue door. Suddenly you see a big flash and hear a big bang.",
+			"fr": "Vous ouvrez la porte bleue. Soudain, un éclair éblouissant vous aveugle et une forte détonation retentit."
+		},
+		"type": "text"
+	},
+	"root": {
+		"choicerank": 0,
+		"inkline": 1,
+		"next": "eb8f-4943-9519-3a09",
+		"type": "root"
+	}
+}
