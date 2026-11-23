@@ -38,3 +38,4 @@ This repository contains the source code of the inkmin tool and an example scene
 
 (c) 2026 Instellis
 Inkmin is released under the [MIT License](LICENSE).
+Bénéficie de l'aide aux moyens techniques du CNC.
